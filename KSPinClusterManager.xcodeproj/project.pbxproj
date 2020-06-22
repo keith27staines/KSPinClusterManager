@@ -10,6 +10,11 @@
 		53D7C36624A15C420048F45F /* KSPinClusterManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D7C35C24A15C420048F45F /* KSPinClusterManager.framework */; };
 		53D7C36B24A15C420048F45F /* KSPinClusterManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C36A24A15C420048F45F /* KSPinClusterManagerTests.swift */; };
 		53D7C36D24A15C420048F45F /* KSPinClusterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7C35F24A15C420048F45F /* KSPinClusterManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53D7C37824A15CA50048F45F /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C37724A15CA50048F45F /* Pin.swift */; };
+		53D7C37C24A15CBE0048F45F /* KSGeometry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D7C37A24A15CBE0048F45F /* KSGeometry.framework */; };
+		53D7C37E24A15CBE0048F45F /* KSQuadTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D7C37B24A15CBE0048F45F /* KSQuadTree.framework */; };
+		53D7C38224A15D550048F45F /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38124A15D550048F45F /* Cluster.swift */; };
+		53D7C38424A15E960048F45F /* ClusterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38324A15E960048F45F /* ClusterManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		53D7C36524A15C420048F45F /* KSPinClusterManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KSPinClusterManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D7C36A24A15C420048F45F /* KSPinClusterManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSPinClusterManagerTests.swift; sourceTree = "<group>"; };
 		53D7C36C24A15C420048F45F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D7C37724A15CA50048F45F /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		53D7C37A24A15CBE0048F45F /* KSGeometry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KSGeometry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D7C37B24A15CBE0048F45F /* KSQuadTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KSQuadTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D7C38124A15D550048F45F /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
+		53D7C38324A15E960048F45F /* ClusterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D7C37C24A15CBE0048F45F /* KSGeometry.framework in Frameworks */,
+				53D7C37E24A15CBE0048F45F /* KSQuadTree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +68,7 @@
 				53D7C35E24A15C420048F45F /* KSPinClusterManager */,
 				53D7C36924A15C420048F45F /* KSPinClusterManagerTests */,
 				53D7C35D24A15C420048F45F /* Products */,
+				53D7C37924A15CBE0048F45F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +84,7 @@
 		53D7C35E24A15C420048F45F /* KSPinClusterManager */ = {
 			isa = PBXGroup;
 			children = (
+				53D7C37624A15C550048F45F /* source */,
 				53D7C35F24A15C420048F45F /* KSPinClusterManager.h */,
 				53D7C36024A15C420048F45F /* Info.plist */,
 			);
@@ -84,6 +98,25 @@
 				53D7C36C24A15C420048F45F /* Info.plist */,
 			);
 			path = KSPinClusterManagerTests;
+			sourceTree = "<group>";
+		};
+		53D7C37624A15C550048F45F /* source */ = {
+			isa = PBXGroup;
+			children = (
+				53D7C37724A15CA50048F45F /* Pin.swift */,
+				53D7C38124A15D550048F45F /* Cluster.swift */,
+				53D7C38324A15E960048F45F /* ClusterManager.swift */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		53D7C37924A15CBE0048F45F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53D7C37A24A15CBE0048F45F /* KSGeometry.framework */,
+				53D7C37B24A15CBE0048F45F /* KSQuadTree.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +181,7 @@
 				TargetAttributes = {
 					53D7C35B24A15C420048F45F = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					53D7C36424A15C420048F45F = {
 						CreatedOnToolsVersion = 11.5;
@@ -195,6 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D7C38224A15D550048F45F /* Cluster.swift in Sources */,
+				53D7C37824A15CA50048F45F /* Pin.swift in Sources */,
+				53D7C38424A15E960048F45F /* ClusterManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,6 +377,7 @@
 		53D7C37124A15C420048F45F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = NB5Q9333BS;
@@ -356,6 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.keith27staines.KSPinClusterManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +403,7 @@
 		53D7C37224A15C420048F45F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = NB5Q9333BS;
@@ -388,6 +428,7 @@
 		53D7C37424A15C420048F45F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NB5Q9333BS;
 				INFOPLIST_FILE = KSPinClusterManagerTests/Info.plist;
@@ -406,6 +447,7 @@
 		53D7C37524A15C420048F45F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NB5Q9333BS;
 				INFOPLIST_FILE = KSPinClusterManagerTests/Info.plist;
