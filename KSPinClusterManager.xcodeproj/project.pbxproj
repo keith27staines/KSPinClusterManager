@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		53D7C36624A15C420048F45F /* KSPinClusterManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D7C35C24A15C420048F45F /* KSPinClusterManager.framework */; };
-		53D7C36B24A15C420048F45F /* KSPinClusterManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C36A24A15C420048F45F /* KSPinClusterManagerTests.swift */; };
 		53D7C36D24A15C420048F45F /* KSPinClusterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7C35F24A15C420048F45F /* KSPinClusterManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53D7C37824A15CA50048F45F /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C37724A15CA50048F45F /* Pin.swift */; };
 		53D7C37C24A15CBE0048F45F /* KSGeometry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D7C37A24A15CBE0048F45F /* KSGeometry.framework */; };
 		53D7C37E24A15CBE0048F45F /* KSQuadTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D7C37B24A15CBE0048F45F /* KSQuadTree.framework */; };
 		53D7C38224A15D550048F45F /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38124A15D550048F45F /* Cluster.swift */; };
 		53D7C38424A15E960048F45F /* ClusterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38324A15E960048F45F /* ClusterManager.swift */; };
+		53D7C38624A2131D0048F45F /* PinTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38524A2131D0048F45F /* PinTestCase.swift */; };
+		53D7C38824A216170048F45F /* ClusterTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38724A216170048F45F /* ClusterTestCase.swift */; };
+		53D7C38A24A21A9F0048F45F /* ClusterManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38924A21A9F0048F45F /* ClusterManagerTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +34,15 @@
 		53D7C35F24A15C420048F45F /* KSPinClusterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSPinClusterManager.h; sourceTree = "<group>"; };
 		53D7C36024A15C420048F45F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D7C36524A15C420048F45F /* KSPinClusterManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KSPinClusterManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53D7C36A24A15C420048F45F /* KSPinClusterManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSPinClusterManagerTests.swift; sourceTree = "<group>"; };
 		53D7C36C24A15C420048F45F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53D7C37724A15CA50048F45F /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		53D7C37A24A15CBE0048F45F /* KSGeometry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KSGeometry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D7C37B24A15CBE0048F45F /* KSQuadTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KSQuadTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D7C38124A15D550048F45F /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
 		53D7C38324A15E960048F45F /* ClusterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterManager.swift; sourceTree = "<group>"; };
+		53D7C38524A2131D0048F45F /* PinTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTestCase.swift; sourceTree = "<group>"; };
+		53D7C38724A216170048F45F /* ClusterTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterTestCase.swift; sourceTree = "<group>"; };
+		53D7C38924A21A9F0048F45F /* ClusterManagerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterManagerTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +98,9 @@
 		53D7C36924A15C420048F45F /* KSPinClusterManagerTests */ = {
 			isa = PBXGroup;
 			children = (
-				53D7C36A24A15C420048F45F /* KSPinClusterManagerTests.swift */,
+				53D7C38924A21A9F0048F45F /* ClusterManagerTestCase.swift */,
+				53D7C38724A216170048F45F /* ClusterTestCase.swift */,
+				53D7C38524A2131D0048F45F /* PinTestCase.swift */,
 				53D7C36C24A15C420048F45F /* Info.plist */,
 			);
 			path = KSPinClusterManagerTests;
@@ -239,7 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53D7C36B24A15C420048F45F /* KSPinClusterManagerTests.swift in Sources */,
+				53D7C38824A216170048F45F /* ClusterTestCase.swift in Sources */,
+				53D7C38A24A21A9F0048F45F /* ClusterManagerTestCase.swift in Sources */,
+				53D7C38624A2131D0048F45F /* PinTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
