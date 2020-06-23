@@ -29,7 +29,7 @@ public class Cluster: XYLocatable, Hashable, Equatable {
         self.pins = Set<Pin>([centerPin])
     }
     
-    public func catchmentRectangle(size: Size) -> Rect {
+    public func catchementRectangle(size: Size) -> Rect {
         Rect(center: centerPin.point, size: size)
     }
     

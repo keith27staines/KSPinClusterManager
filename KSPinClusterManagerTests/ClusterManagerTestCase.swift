@@ -47,21 +47,21 @@ class ClusterManagerTestCase: XCTestCase {
     func test_rebuildClusters_with_catchement_smaller_than_pin_separation() {
         let sut = ClusterManager(bounds: bounds)
         sut.insertPins(pins)
-        sut.rebuildClusters(catchmentSize: Size.zero)
+        sut.rebuildClusters(catchementSize: Size.zero)
         XCTAssertEqual(sut.clustersQuadTree.count(), pins.count)
     }
     
     func test_rebuildClusters_from_two_close_pins() {
         let sut = ClusterManager(bounds: bounds)
         sut.insertPins([pins[0],pins[1]])
-        sut.rebuildClusters(catchmentSize: Size(width: 2.0001, height: 2))
+        sut.rebuildClusters(catchementSize: Size(width: 2.0001, height: 2))
         XCTAssertEqual(sut.clustersQuadTree.count(), 1)
     }
     
     func test_rebuildClusters_from_two_close_pins_one_distant_pin() {
         let sut = ClusterManager(bounds: bounds)
         sut.insertPins([pins[0],pins[1], pins[4]])
-        sut.rebuildClusters(catchmentSize: Size(width: 2.1, height: 2))
+        sut.rebuildClusters(catchementSize: Size(width: 2.1, height: 2))
         XCTAssertEqual(sut.clustersQuadTree.count(), 2)
     }
     

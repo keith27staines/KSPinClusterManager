@@ -6,11 +6,7 @@ public class ClusterManager {
     public let bounds: Rect
     public var pinsQuadTree: KSQuadTree
     public var clustersQuadTree: KSQuadTree
-    public var pins: [Pin] = [] {
-        didSet {
-            
-        }
-    }
+    public private (set) var pins: [Pin] = []
     
     public init(bounds: Rect) {
         self.bounds = bounds
@@ -19,7 +15,6 @@ public class ClusterManager {
     }
     
     public func insertPins(_ pins: [Pin]) {
-        clear()
         for pin in pins {
             try? insertPin(pin)
         }
@@ -37,20 +32,24 @@ public class ClusterManager {
         clustersQuadTree = KSQuadTree(bounds: bounds)
     }
     
-    public func rebuildClusters(catchmentSize: Size) {
+    public func rebuildClusters(catchementSize: Size) {
         clustersQuadTree = KSQuadTree(bounds: bounds)
         for pin in pins {
-            let catchment = Rect(center: pin.point, size: catchmentSize)
-            let nearby = clustersQuadTree.retrieveWithinRect(catchment)
-            guard let nearestCluster = findNearest(to: pin, from: nearby)?.object as? Cluster
-                else {
-                    let newCluster = Cluster(id: "", centerPin: pin)
-                    let item = KSQuadTreeItem(point: newCluster.centerPin.point, object: newCluster)
-                    try? clustersQuadTree.insert(item: item)
-                    continue
-            }
-            nearestCluster.addPin(pin)
+            let catchement = Rect(center: pin.point, size: catchementSize)
+            addPinToNearestClusterInCatchementRect(pin: pin, rect: catchement)
         }
+    }
+    
+    func addPinToNearestClusterInCatchementRect(pin: Pin, rect: Rect) {
+        let nearby = clustersQuadTree.retrieveWithinRect(rect)
+        guard let nearestCluster = findNearest(to: pin, from: nearby)?.object as? Cluster
+            else {
+                let newCluster = Cluster(id: "", centerPin: pin)
+                let item = KSQuadTreeItem(point: newCluster.centerPin.point, object: newCluster)
+                try? clustersQuadTree.insert(item: item)
+                return
+        }
+        nearestCluster.addPin(pin)
     }
     
     func findNearest<A:XYLocatable, B:XYLocatable>(to object: A, from others: [B] ) -> B? {
@@ -64,11 +63,5 @@ public class ClusterManager {
             }
         }
         return closest
-    }
-}
-
-extension XYLocatable {
-    func distance2From(_ other: XYLocatable) -> Float {
-        (x - other.x)*(x - other.x) + (y - other.y)*(y - other.y)
     }
 }
