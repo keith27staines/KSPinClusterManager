@@ -31,14 +31,14 @@ class ClusterManagerTestCase: XCTestCase {
     
     func test_insertPins() {
         let sut = ClusterManager(bounds: bounds)
-        sut.insertPins(pins)
+        sut.insert(pins)
         XCTAssertEqual(sut.pinsQuadTree.count(), pins.count)
         XCTAssertEqual(sut.pins, pins)
     }
     
     func test_clear() {
         let sut = ClusterManager(bounds: bounds)
-        sut.insertPins(pins)
+        sut.insert(pins)
         sut.clear()
         XCTAssertEqual(sut.pinsQuadTree.count(), 0)
         XCTAssertEqual(sut.pins.count, 0)
@@ -46,21 +46,21 @@ class ClusterManagerTestCase: XCTestCase {
     
     func test_rebuildClusters_with_catchement_smaller_than_pin_separation() {
         let sut = ClusterManager(bounds: bounds)
-        sut.insertPins(pins)
+        sut.insert(pins)
         sut.rebuildClusters(catchementSize: Size.zero)
         XCTAssertEqual(sut.clustersQuadTree.count(), pins.count)
     }
     
     func test_rebuildClusters_from_two_close_pins() {
         let sut = ClusterManager(bounds: bounds)
-        sut.insertPins([pins[0],pins[1]])
+        sut.insert([pins[0],pins[1]])
         sut.rebuildClusters(catchementSize: Size(width: 2.0001, height: 2))
         XCTAssertEqual(sut.clustersQuadTree.count(), 1)
     }
     
     func test_rebuildClusters_from_two_close_pins_one_distant_pin() {
         let sut = ClusterManager(bounds: bounds)
-        sut.insertPins([pins[0],pins[1], pins[4]])
+        sut.insert([pins[0],pins[1], pins[4]])
         sut.rebuildClusters(catchementSize: Size(width: 2.1, height: 2))
         XCTAssertEqual(sut.clustersQuadTree.count(), 2)
     }

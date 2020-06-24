@@ -14,13 +14,13 @@ public class ClusterManager {
         clustersQuadTree = KSQuadTree(bounds: bounds)
     }
     
-    public func insertPins(_ pins: [Pin]) {
+    public func insert(_ pins: [Pin]) {
         for pin in pins {
             try? insertPin(pin)
         }
     }
     
-    public func insertPin(_ pin: Pin) throws {
+    func insertPin(_ pin: Pin) throws {
         let item = KSQuadTreeItem(point: pin.point, object: nil)
         try pinsQuadTree.insert(item: item)
         pins.append(pin)
@@ -30,6 +30,10 @@ public class ClusterManager {
         pins = []
         pinsQuadTree = KSQuadTree(bounds: bounds)
         clustersQuadTree = KSQuadTree(bounds: bounds)
+    }
+    
+    public func getClusters() -> [Cluster] {
+        clustersQuadTree.retrieveAll().compactMap { ($0.object as? Cluster) }
     }
     
     public func rebuildClusters(catchementSize: Size) {
