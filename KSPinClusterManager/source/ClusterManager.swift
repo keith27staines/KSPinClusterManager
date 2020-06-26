@@ -21,7 +21,7 @@ public class ClusterManager {
     }
     
     func insertPin(_ pin: Pin) throws {
-        let item = KSQuadTreeItem(point: pin.point, object: nil)
+        let item = KSQuadTreeItem(point: pin.point, object: pin)
         try pinsQuadTree.insert(item: item)
         pins.append(pin)
     }
@@ -36,8 +36,11 @@ public class ClusterManager {
         clustersQuadTree.retrieveAll().compactMap { ($0.object as? Cluster) }
     }
     
-    public func rebuildClusters(catchementSize: Size) {
+    public func rebuildClusters(catchementSize: Size, in rect: Rect) {
         clustersQuadTree = KSQuadTree(bounds: bounds)
+        let pins = pinsQuadTree.retrieveWithinRect(rect).compactMap { (item) -> Pin? in
+            item.object as? Pin
+        }
         for pin in pins {
             let catchement = Rect(center: pin.point, size: catchementSize)
             addPinToNearestClusterInCatchementRect(pin: pin, rect: catchement)

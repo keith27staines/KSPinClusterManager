@@ -1,7 +1,7 @@
 
 import XCTest
-import KSPinClusterManager
 import KSGeometry
+@testable import KSPinClusterManager
 
 class ClusterManagerTestCase: XCTestCase {
     
