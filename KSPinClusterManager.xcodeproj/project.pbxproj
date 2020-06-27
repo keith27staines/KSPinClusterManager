@@ -17,6 +17,7 @@
 		53D7C38624A2131D0048F45F /* PinTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38524A2131D0048F45F /* PinTestCase.swift */; };
 		53D7C38824A216170048F45F /* ClusterTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38724A216170048F45F /* ClusterTestCase.swift */; };
 		53D7C38A24A21A9F0048F45F /* ClusterManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C38924A21A9F0048F45F /* ClusterManagerTestCase.swift */; };
+		53F12B1724A71B8D001E02A9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 53F12B1624A71B8D001E02A9 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,9 @@
 		53D7C38524A2131D0048F45F /* PinTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTestCase.swift; sourceTree = "<group>"; };
 		53D7C38724A216170048F45F /* ClusterTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterTestCase.swift; sourceTree = "<group>"; };
 		53D7C38924A21A9F0048F45F /* ClusterManagerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterManagerTestCase.swift; sourceTree = "<group>"; };
+		53F12B0C24A71AD4001E02A9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		53F12B1024A71B64001E02A9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		53F12B1624A71B8D001E02A9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,9 @@
 		53D7C35224A15C420048F45F = {
 			isa = PBXGroup;
 			children = (
+				53F12B1624A71B8D001E02A9 /* .gitignore */,
+				53F12B1024A71B64001E02A9 /* README.md */,
+				53F12B0C24A71AD4001E02A9 /* LICENSE */,
 				53D7C35E24A15C420048F45F /* KSPinClusterManager */,
 				53D7C36924A15C420048F45F /* KSPinClusterManagerTests */,
 				53D7C35D24A15C420048F45F /* Products */,
@@ -218,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F12B1724A71B8D001E02A9 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
